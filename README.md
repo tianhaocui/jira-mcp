@@ -2,6 +2,8 @@
 
 An MCP server that enables Large Language Models (LLMs) to interact with JIRA through standardized tools and context. This server provides capabilities for searching issues using JQL and retrieving detailed issue information.
 
+<a href="https://glama.ai/mcp/servers/4e3sqj7af1"><img width="380" height="200" src="https://glama.ai/mcp/servers/4e3sqj7af1/badge" alt="jira-mcp MCP server" /></a>
+
 ## Features
 
 - **JQL Search**: Execute complex JQL queries with pagination support
