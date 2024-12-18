@@ -11,25 +11,10 @@ An MCP server that enables Large Language Models (LLMs) to interact with JIRA th
 
 ## Prerequisites
 
-- Node.js 16 or higher
+- `npm` installed
 - A JIRA instance with API access
 - JIRA API token or Personal Access Token
 - JIRA user email associated with the API token
-
-## Configuration
-
-Set up your environment variables before running the server. Create a `.env` file in the root directory:
-
-```env
-JIRA_INSTANCE_URL=https://your-instance.atlassian.net
-JIRA_USER_EMAIL=your-email@company.com
-JIRA_API_KEY=your-api-token
-```
-
-Replace the values with:
-- Your actual JIRA instance URL
-- The email address associated with your JIRA account
-- Your JIRA API token (can be generated in Atlassian Account Settings)
 
 ### Getting JIRA API Credentials
 
@@ -112,6 +97,21 @@ Retrieves detailed information about a specific issue.
 
 ## Development
 
+### Configuration
+
+Set up your environment variables before running the server. Create a `.env` file in the root directory:
+
+```env
+JIRA_INSTANCE_URL=https://your-instance.atlassian.net
+JIRA_USER_EMAIL=your-email@company.com
+JIRA_API_KEY=your-api-token
+```
+
+Replace the values with:
+- Your actual JIRA instance URL
+- The email address associated with your JIRA account
+- Your JIRA API token (can be generated in Atlassian Account Settings)
+
 ### Installation
 
 1. Clone this repository:
@@ -162,4 +162,4 @@ MIT
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a PR.
