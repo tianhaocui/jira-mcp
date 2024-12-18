@@ -14,19 +14,6 @@ An MCP server that enables Large Language Models (LLMs) to interact with JIRA th
 - JIRA API token or Personal Access Token
 - JIRA user email associated with the API token
 
-## Installation
-
-1. Clone this repository:
-```bash
-git clone <repository-url>
-cd jira-mcp
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
 ## Configuration
 
 Set up your environment variables before running the server. Create a `.env` file in the root directory:
@@ -65,8 +52,8 @@ Replace the values with:
 {
   "mcpServers": {
     "jira": {
-      "command": "node",
-      "args": ["/absolute/path/to/jira-mcp/index.js"],
+      "command": "npx",
+      "args": ["-y" "jira-mcp"],
       "env": {
         "JIRA_INSTANCE_URL": "https://your-instance.atlassian.net",
         "JIRA_USER_EMAIL": "your-email@company.com",
@@ -121,8 +108,20 @@ Retrieves detailed information about a specific issue.
 }
 ```
 
-
 ## Development
+
+### Installation
+
+1. Clone this repository:
+```bash
+git clone <repository-url>
+cd jira-mcp
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
 
 ### Running with MCP Inspector
 

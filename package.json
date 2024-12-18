@@ -10,6 +10,9 @@
     "mcp",
     "jira"
   ],
+  "bin": {
+    "jira-mcp": "./index.js"
+  },
   "author": "Camden Clark",
   "license": "MIT",
   "description": "",
