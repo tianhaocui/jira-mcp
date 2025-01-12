@@ -1,4 +1,5 @@
 # JIRA MCP Server
+[![smithery badge](https://smithery.ai/badge/jira-mcp)](https://smithery.ai/server/jira-mcp)
 
 An MCP server that enables Large Language Models (LLMs) to interact with JIRA through standardized tools and context. This server provides capabilities for searching issues using JQL and retrieving detailed issue information.
 
@@ -114,6 +115,15 @@ Replace the values with:
 
 ### Installation
 
+### Installing via Smithery
+
+To install JIRA for Claude Desktop automatically via [Smithery](https://smithery.ai/server/jira-mcp):
+
+```bash
+npx -y @smithery/cli install jira-mcp --client claude
+```
+
+### Manual Installation
 1. Clone this repository:
 ```bash
 git clone <repository-url>
