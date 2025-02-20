@@ -41,7 +41,7 @@ An MCP server that enables Large Language Models (LLMs) to interact with JIRA th
   "mcpServers": {
     "jira": {
       "command": "npx",
-      "args": ["-y" "jira-mcp"],
+      "args": ["-y", "jira-mcp"],
       "env": {
         "JIRA_INSTANCE_URL": "https://your-instance.atlassian.net",
         "JIRA_USER_EMAIL": "your-email@company.com",
