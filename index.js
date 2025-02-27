@@ -203,7 +203,6 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.log("JIRA MCP Server is running.");
 }
 
 main().catch((error) => {
