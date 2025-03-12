@@ -42,11 +42,6 @@ An MCP server that enables Large Language Models (LLMs) to interact with JIRA th
     "jira": {
       "command": "npx",
       "args": ["-y", "jira-mcp"],
-      "env": {
-        "JIRA_INSTANCE_URL": "https://your-instance.atlassian.net",
-        "JIRA_USER_EMAIL": "your-email@company.com",
-        "JIRA_API_KEY": "your-api-token"
-      }
     }
   }
 }
@@ -105,7 +100,7 @@ Set up your environment variables before running the server. Create a `.env` fil
 ```env
 JIRA_INSTANCE_URL=https://your-instance.atlassian.net
 JIRA_USER_EMAIL=your-email@company.com
-JIRA_API_KEY=your-api-token
+JIRA_USER_PASSWORD=your-api-token
 ```
 
 Replace the values with:
