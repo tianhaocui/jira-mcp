@@ -6,16 +6,24 @@ import {
   ListToolsRequestSchema,
   CallToolRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+
+// 加载.env文件
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+dotenv.config({ path: resolve(__dirname, '.env') });
 
 // Retrieve environment variables
 const JIRA_INSTANCE_URL = process.env.JIRA_INSTANCE_URL;
-const JIRA_API_KEY = process.env.JIRA_API_KEY;
 const JIRA_USER_EMAIL = process.env.JIRA_USER_EMAIL;
+const JIRA_USER_PASSWORD = process.env.JIRA_USER_PASSWORD;
 
 // Validate environment variables
-if (!JIRA_INSTANCE_URL || !JIRA_API_KEY || !JIRA_USER_EMAIL) {
+if (!JIRA_INSTANCE_URL || !JIRA_USER_PASSWORD || !JIRA_USER_EMAIL) {
   console.error(
-    "Error: JIRA_INSTANCE_URL, JIRA_USER_EMAIL, and JIRA_API_KEY must be set in the environment.",
+    "Error: JIRA_INSTANCE_URL, JIRA_USER_EMAIL, and JIRA_USER_PASSWORD must be set in the environment.",
   );
   process.exit(1);
 }
@@ -113,7 +121,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Basic ${Buffer.from(`${JIRA_USER_EMAIL}:${JIRA_API_KEY}`).toString("base64")}`,
+          Authorization: `Basic ${Buffer.from(`${JIRA_USER_EMAIL}:${JIRA_USER_PASSWORD}`).toString("base64")}`,
         },
         body: JSON.stringify({
           jql,
@@ -125,7 +133,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       });
 
       if (!response.ok) {
-        throw new Error(`Jira API Error: ${response.statusText}`);
+        throw new Error(`Jira API Error: ${response.statusText} + ${response.status}`);
       }
 
       const data = await response.json();
@@ -165,13 +173,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Basic ${Buffer.from(`${JIRA_USER_EMAIL}:${JIRA_API_KEY}`).toString("base64")}`,
+            Authorization: `Basic ${Buffer.from(`${JIRA_USER_EMAIL}:${JIRA_USER_PASSWORD}`).toString("base64")}`,
           },
         },
       );
 
       if (!response.ok) {
-        throw new Error(`Jira API Error: ${response.statusText}`);
+        throw new Error(`Jira API Error: ${response.statusText} + ${response.status}`);
       }
 
       const data = await response.json();
