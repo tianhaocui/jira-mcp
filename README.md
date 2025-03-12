@@ -1,3 +1,7 @@
+# this fork
+Some older versions of Jira cannot use the API key method to call APIs. 
+This fork is compatible with older versions using Basic Authentication for authorization.
+
 # JIRA MCP Server
 [![smithery badge](https://smithery.ai/badge/jira-mcp)](https://smithery.ai/server/jira-mcp)
 
@@ -100,7 +104,7 @@ Set up your environment variables before running the server. Create a `.env` fil
 ```env
 JIRA_INSTANCE_URL=https://your-instance.atlassian.net
 JIRA_USER_EMAIL=your-email@company.com
-JIRA_USER_PASSWORD=your-api-token
+JIRA_USER_PASSWORD=your-jira-password
 ```
 
 Replace the values with:
